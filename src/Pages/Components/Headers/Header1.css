@@ -1,0 +1,28 @@
+/* .fr-header {
+    
+    
+} */
+
+.logo-img {
+    width: 80px;
+}
+/* 
+.search-input {
+    width: 70vh;
+    height: 7vh;
+    border-radius: 20px;
+    border: 1px black solid;
+    font-size: 15px;
+    padding-left: 10px;
+    font-weight: bold;
+} */
+
+.search-input:focus {
+    outline: none;
+}
+
+/* .search-icon {
+    border-radius: 20px;
+    border-color: red ;
+    height: 6vh;
+} */
