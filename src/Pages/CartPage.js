@@ -11,6 +11,8 @@ const CartPage = () => {
   const proId = currentLink.charAt(27);
 
   const [product, setProducts] = useState([]);
+  const [newProduct, setNewProduct] = useState([]);
+  
   useEffect(() => {
     async function fetchProducts() {
       const { data } = await axios.get(
@@ -20,6 +22,13 @@ const CartPage = () => {
     }
     fetchProducts();
   });
+
+  async function EnterProducts() {
+    const { newdata } = await axios.post(
+      `http://127.0.0.1:8000/api/products/show_products`
+    );
+    setNewProduct(newdata);
+  }  
 
   const count = 1;
   const theme = useTheme();
@@ -118,6 +127,7 @@ const CartPage = () => {
               height: "7vh",
               ":hover": { backgroundColor: "#151515" },
             }}
+            onClick={EnterProducts}
           >
             Add To Cart
             <AddShoppingCartIcon sx={{ ml: 1 }} />
